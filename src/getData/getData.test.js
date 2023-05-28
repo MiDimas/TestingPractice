@@ -85,5 +85,7 @@ describe('getData', () => {
         const data = await getData();
         expect(axios.get).toBeCalledTimes(1);
         expect(data).toEqual(['1', '2', '3']);
+    //    Дополнительно можно сделать скришноты последнего удачного теста с результатами которые мы ожидаем
+        expect(data).toMatchSnapshot();
     })
 });
