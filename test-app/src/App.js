@@ -5,6 +5,7 @@ function App() {
     //Для теста асинхронщины
     const [data, setData] = useState(null);
     const [toggle, setToggle] = useState(false);
+    const [value, setValue] = useState('');
 
     const onClick = () => {
         setToggle(prevState => !prevState)
@@ -22,7 +23,11 @@ function App() {
             {data && <div style={{color: "red"}}>data</div>}
             <h1>Hello world</h1>
             <button data-testid='toggle-btn' onClick={onClick}>click me</button>
-            <input type="text" placeholder="input value ..." />
+            <div data-testid='value-elem'>{value}</div>
+            <input type="text" placeholder="input value ..."
+                   data-testid='value-input'
+                   onChange={({target}) => setValue(target.value)}
+            />
         </div>
     );
 }

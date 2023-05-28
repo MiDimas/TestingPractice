@@ -21,17 +21,17 @@ describe( 'Тестирование App', () => {
     test('Проверка на отсутствие элемента на странице', () => {
         const hello2World = screen.queryByText(/hello2/i);
         expect(hello2World).toBeNull();
-    })
+    });
     test('Проверка на aсинхронную отрисовку элемента', async () => {
         screen.debug();
         const data = await screen.findByText(/data/i);
         expect(data).toBeInTheDocument();
         screen.debug();
-    })
+    });
     test('Проверка на стиль текста в элементе', async () => {
         const data = await screen.findByText(/data/i);
         expect(data).toHaveStyle({color: "red"});
-    })
+    });
     test('Тестирование нажатия на кнопку и отрисовки по тогглу элемента', () => {
         const btn = screen.getByTestId('toggle-btn');
         expect(screen.queryByTestId('toggle-elem')).toBeNull();
@@ -39,6 +39,16 @@ describe( 'Тестирование App', () => {
         expect(screen.queryByTestId('toggle-elem')).toBeInTheDocument();
         fireEvent.click(btn);
         expect(screen.queryByTestId('toggle-elem')).toBeNull();
+    });
+    test('Проверка ввода в инпут', () => {
+        const input = screen.getByTestId('value-input');
+        const elem = screen.getByTestId('value-elem');
+        expect(elem).toHaveTextContent('');
+        fireEvent.input(input, {
+            target: { value: '123123'}
+        });
+        expect(elem).toHaveTextContent('123123');
+
     })
 })
 
