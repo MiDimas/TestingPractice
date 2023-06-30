@@ -1,6 +1,6 @@
 import './App.css';
 import {useEffect, useState} from "react";
-import {BrowserRouter, Link, Route, Routes} from "react-router-dom";
+import {Link, Route, Routes} from "react-router-dom";
 import MainPage from "./pages/MainPage/MainPage";
 import AboutPage from "./pages/AboutPage/AboutPage";
 
@@ -34,16 +34,17 @@ import AboutPage from "./pages/AboutPage/AboutPage";
 //         </div>
 //     );
 // }
+// Для тестирования роутера
 function App () {
     return (
-        <BrowserRouter>
-            <Link to={'/'} data-testid={'main-link'}>main</Link>
-            <Link to={'/about'} data-testid={'about-link'}>about</Link>
+    <div>
+            <Link to={'/'} data-testid={'main-link'} className="link-route">main</Link>
+            <Link to={'/about'} data-testid={'about-link'} className="link-route">about</Link>
             <Routes>
                 <Route path={'/'} element={<MainPage />}/>
                 <Route path={'/about'} element={<AboutPage />}/>
             </Routes>
-        </BrowserRouter>
+    </div>
     );
 }
 

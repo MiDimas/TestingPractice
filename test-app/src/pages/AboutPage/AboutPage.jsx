@@ -2,7 +2,7 @@
 const AboutPage = () => {
     return (
         <div>
-            Страница О НАС
+            <h1 data-testid={'about-page'}>Страница О НАС</h1>
         </div>
     );
 };
