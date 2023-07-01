@@ -1,4 +1,4 @@
-import {render, screen} from "@testing-library/react";
+import { render, screen} from "@testing-library/react";
 import App from "./App";
 import userEvent from "@testing-library/user-event";
 import {MemoryRouter} from "react-router-dom";
@@ -17,6 +17,14 @@ describe("Testing Router", () => {
         expect(screen.getByTestId('main-page')).toBeInTheDocument();
         await user.click(aboutLink);
         expect(screen.getByTestId('about-page')).toBeInTheDocument();
+    });
+    test("Test link transitions", async () => {
 
+        render(
+            <MemoryRouter initialEntries={['/fdnvd']}>
+                <App />
+            </MemoryRouter>
+        );
+        expect(screen.getByTestId('error-page')).toBeInTheDocument();
     });
 })

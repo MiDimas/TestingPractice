@@ -3,6 +3,7 @@ import {useEffect, useState} from "react";
 import {Link, Route, Routes} from "react-router-dom";
 import MainPage from "./pages/MainPage/MainPage";
 import AboutPage from "./pages/AboutPage/AboutPage";
+import ErrorPage from "./pages/ErrorPage/ErrorPage";
 
 // function App() {
 //     //Для теста асинхронщины
@@ -43,6 +44,7 @@ function App () {
             <Routes>
                 <Route path={'/'} element={<MainPage />}/>
                 <Route path={'/about'} element={<AboutPage />}/>
+                <Route path={'/*'} element={<ErrorPage />}/>
             </Routes>
     </div>
     );
