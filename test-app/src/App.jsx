@@ -6,6 +6,7 @@ import AboutPage from "./pages/AboutPage/AboutPage";
 import ErrorPage from "./pages/ErrorPage/ErrorPage";
 import UsersPage from "./pages/UsersPage/UsersPage";
 import UserDetailPage from "./pages/UserDetailPage/UserDetailPage";
+import AppRouter from "./components/AppRouter/AppRouter";
 
 // function App() {
 //     //Для теста асинхронщины
@@ -44,13 +45,7 @@ function App () {
             <Link to={'/'} data-testid={'main-link'} className="link-route">main</Link>
             <Link to={'/about'} data-testid={'about-link'} className="link-route">about</Link>
             <Link to={'/users'} data-testid={'users-link'} className="link-route">users</Link>
-            <Routes>
-                <Route path={'/'} element={<MainPage />}/>
-                <Route path={'/about'} element={<AboutPage />}/>
-                <Route path={'/users'} element={<UsersPage />}/>
-                <Route path={'/users/:id'} element={<UserDetailPage />}/>
-                <Route path={'/*'} element={<ErrorPage />}/>
-            </Routes>
+            <AppRouter />
     </div>
     );
 }

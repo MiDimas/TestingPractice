@@ -18,7 +18,7 @@ describe("Testing Router", () => {
         await user.click(aboutLink);
         expect(screen.getByTestId('about-page')).toBeInTheDocument();
     });
-    test("Test link transitions", async () => {
+    test("Test link transitions", () => {
 
         render(
             <MemoryRouter initialEntries={['/fdnvd']}>
@@ -27,4 +27,8 @@ describe("Testing Router", () => {
         );
         expect(screen.getByTestId('error-page')).toBeInTheDocument();
     });
+
+    test('Test users', () => {
+
+    })
 })
