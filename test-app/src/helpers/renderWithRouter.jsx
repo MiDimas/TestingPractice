@@ -9,5 +9,5 @@ export const renderWithRouter = (component, initial='/') => {
             <AppRouter />
             {component}
         </MemoryRouter>
-    )
+    );
 }
