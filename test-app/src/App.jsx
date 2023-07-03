@@ -7,6 +7,7 @@ import ErrorPage from "./pages/ErrorPage/ErrorPage";
 import UsersPage from "./pages/UsersPage/UsersPage";
 import UserDetailPage from "./pages/UserDetailPage/UserDetailPage";
 import AppRouter from "./components/AppRouter/AppRouter";
+import Navbar from "./components/Navbar/Navbar";
 
 // function App() {
 //     //Для теста асинхронщины
@@ -42,9 +43,7 @@ import AppRouter from "./components/AppRouter/AppRouter";
 function App () {
     return (
     <div>
-            <Link to={'/'} data-testid={'main-link'} className="link-route">main</Link>
-            <Link to={'/about'} data-testid={'about-link'} className="link-route">about</Link>
-            <Link to={'/users'} data-testid={'users-link'} className="link-route">users</Link>
+            <Navbar />
             <AppRouter />
     </div>
     );

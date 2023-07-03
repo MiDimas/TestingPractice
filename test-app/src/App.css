@@ -6,8 +6,15 @@
   height: 40vmin;
   pointer-events: none;
 }
+.navbar{
+  display: flex;
+  background-color: cadetblue;
+}
 .link-route{
   padding: 10px;
+  text-decoration: none;
+  color: #5e095e;
+  font-size: 24px;
 }
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
