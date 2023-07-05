@@ -1,16 +1,16 @@
 import {useDispatch, useSelector} from "react-redux";
 import {getCounterValue} from "../../store/reducers/selectors/getCounterValue/getCounterValue";
-import {counterSlice} from "../../store/reducers/counterReducer";
+import {incremented, decremented} from "../../store/reducers/counterReducer";
 
 const Counter = () => {
     const dispatch = useDispatch();
     const count = useSelector(getCounterValue);
 
     const onIncrement = () => {
-        dispatch(counterSlice.actions.incremented());
+        dispatch(incremented());
     }
     const onDecrement = () => {
-        dispatch(counterSlice.actions.decremented())
+        dispatch(decremented())
     }
 
     return (
