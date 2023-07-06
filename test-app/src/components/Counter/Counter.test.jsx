@@ -3,6 +3,7 @@ import Counter from "./Counter";
 import {Provider} from "react-redux";
 import {createReduxStore} from "../../store/store";
 import {renderWithProvider} from "../../helpers/renderWithProvider";
+import renderTestApp from "../../helpers/renderTestApp";
 
 describe("Тестирование счетчика", () => {
     test("Инкремент", () => {
@@ -20,7 +21,12 @@ describe("Тестирование счетчика", () => {
         expect(getByTestId("value-title")).toHaveTextContent('-1')
     });
     test("Декремент с стартовым значением", () => {
-        const { getByTestId } = renderWithProvider(<Counter />, {counter: { value: 10 }})
+        const { getByTestId } = renderTestApp(null, {
+            route: '/',
+            initialState: {
+                counter: {value: 10}
+            }
+        })
         const decrementBtn = getByTestId("decrement-btn");
         expect(getByTestId("value-title")).toHaveTextContent('10');
         fireEvent.click(decrementBtn);
