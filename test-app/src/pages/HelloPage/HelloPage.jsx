@@ -1,4 +1,5 @@
 import {useState} from "react";
+import UsersE2E from "../../components/UsersE2E/UsersE2E";
 
 const HelloPage = () => {
     const [visible, setVisible] = useState(false);
@@ -15,6 +16,8 @@ const HelloPage = () => {
                 visible && value === 'hello' &&
                 <h3 id={"helloTitle"} onChange={handleChange}>Hello WRLD</h3>
             }
+
+            <UsersE2E />
         </div>
     );
 };
