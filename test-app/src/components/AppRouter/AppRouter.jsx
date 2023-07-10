@@ -6,6 +6,7 @@ import UsersPage from "../../pages/UsersPage/UsersPage";
 import UserDetailPage from "../../pages/UserDetailPage/UserDetailPage";
 import ErrorPage from "../../pages/ErrorPage/ErrorPage";
 import HelloPage from "../../pages/HelloPage/HelloPage";
+import UsersForTest from "../../pages/UsersForTest/UsersForTest";
 
 const AppRouter = () => {
     return (
@@ -14,6 +15,7 @@ const AppRouter = () => {
             <Route path={'/hello'} element={<HelloPage />}/>
             <Route path={'/about'} element={<AboutPage />}/>
             <Route path={'/users'} element={<UsersPage />}/>
+            <Route path={'/users-test'} element={<UsersForTest />} />
             <Route path={'/users/:id'} element={<UserDetailPage />}/>
             <Route path={'/*'} element={<ErrorPage />}/>
         </Routes>

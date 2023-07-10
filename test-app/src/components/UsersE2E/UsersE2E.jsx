@@ -24,10 +24,12 @@ const UsersE2E = () => {
     return (
         <div>
             {isLoading && <h1 id={'loading'}>Идет загрузка...</h1> }
-            { users.length && !isLoading &&
-                <div id={'users-list'}>
-                    { users.map(user => <User key={`user-${user.id}`} onDelete={onDelete} user={user}/>) }
-                </div>
+            { users.length && !isLoading
+                ?   <div id={'users-list'}>
+                        { users.map(user => <User key={`user-${user.id}`} onDelete={onDelete} user={user}/>) }
+                    </div>
+                : null
+
             }
         </div>
     );
