@@ -1,10 +1,8 @@
-
-
 const User = ({user, onDelete}) => {
     return (
-        <div>
+        <div className={'user-item'}>
             <span>{user.name}</span>
-            <button id={`delete-user-${user.id}`} onClick={() => onDelete(user.id)}>Удалить пользователя</button>
+            <button id={`delete-user`} onClick={() => onDelete(user.id)}>Удалить пользователя</button>
         </div>
     );
 };
